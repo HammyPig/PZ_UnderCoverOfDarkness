@@ -4,17 +4,17 @@ local SIGHT_POOR = 3
 
 local function isNightTime()
     local hour = getGameTime():getTimeOfDay()
-    local night_start_hour = SandboxVars.UnderCoverOfDarkness.NightStartHour
-    local night_end_hour = SandboxVars.UnderCoverOfDarkness.NightEndHour
+    local nightStartHour = SandboxVars.UnderCoverOfDarkness.NightStartHour
+    local nightEndHour = SandboxVars.UnderCoverOfDarkness.NightEndHour
 
-    if night_start_hour == night_end_hour then
+    if nightStartHour == nightEndHour then
         return false
     end
 
-    if night_start_hour > night_end_hour then
-        return hour >= night_start_hour or hour < night_end_hour
-    elseif night_start_hour < night_end_hour then
-        return hour >= night_start_hour and hour < night_end_hour
+    if nightStartHour > nightEndHour then
+        return hour >= nightStartHour or hour < nightEndHour
+    elseif nightStartHour < nightEndHour then
+        return hour >= nightStartHour and hour < nightEndHour
     end
 end
 
