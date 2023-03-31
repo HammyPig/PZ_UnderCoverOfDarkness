@@ -7,12 +7,17 @@ local function isNightTime()
     return hour >= 23 or hour < 5
 end
 
-local function underCoverOfDarkness()
-    if isNightTime() then
+local function isFoggy(climateManager)
+    local fogIntensity = climateManager:getFogIntensity()
+    return fogIntensity >= 0.1
+end
+
+local function underCoverOfDarkness(climateManager)
+    if isNightTime() or isFoggy(climateManager) then
         getSandboxOptions():set("ZombieLore.Sight", SIGHT_POOR)
     else
         getSandboxOptions():set("ZombieLore.Sight", SIGHT_NORMAL)
     end
 end
 
-Events.EveryHours.Add(underCoverOfDarkness)
+Events.OnClimateTick.Add(underCoverOfDarkness)
