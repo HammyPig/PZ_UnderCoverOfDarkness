@@ -4,18 +4,19 @@ local SIGHT_EAGLE = 1
 local SIGHT_NORMAL = 2
 local SIGHT_POOR = 3
 
-local function isNightTime()
-    local hour = getGameTime():getTimeOfDay()
-    local nightStartHour = SandboxVars.UnderCoverOfDarkness.NightStartHour
-    local nightEndHour = SandboxVars.UnderCoverOfDarkness.NightEndHour
+local DUSK_OFFSET = 2
+local DAWN_OFFSET = -2
 
-    if nightStartHour == nightEndHour then
-        return false
-    end
+local function isNightTime(climateManager)
+    local hour = getGameTime():getTimeOfDay()
+    local season = climateManager:getCurrentDay():getSeason()
+
+    local nightStartHour = season:getDusk() + DUSK_OFFSET
+    local nightEndHour = season:getDawn() + DAWN_OFFSET
 
     if nightStartHour > nightEndHour then
         return hour >= nightStartHour or hour < nightEndHour
-    elseif nightStartHour < nightEndHour then
+    else
         return hour >= nightStartHour and hour < nightEndHour
     end
 end
@@ -34,8 +35,10 @@ local function printValues(climateManager)
     end
 
     local hour = getGameTime():getTimeOfDay()
-    local nightStartHour = SandboxVars.UnderCoverOfDarkness.NightStartHour
-    local nightEndHour = SandboxVars.UnderCoverOfDarkness.NightEndHour
+    local season = climateManager:getCurrentDay():getSeason()
+
+    local nightStartHour = season:getDusk() + DUSK_OFFSET
+    local nightEndHour = season:getDawn() + DAWN_OFFSET
 
     local fogIntensity = climateManager:getFogIntensity()
 
@@ -46,13 +49,13 @@ local function printValues(climateManager)
     print("fogIntensity: ", fogIntensity)
     print("minimumFogIntensity: ", SandboxVars.UnderCoverOfDarkness.MinimumFogIntensity)
     print()
-    print("isNightTime: ", isNightTime())
+    print("isNightTime: ", isNightTime(climateManager))
     print("isFoggy: ", isFoggy(climateManager))
     print("zombieSightName: ", getZombieSightName())
 end
 
 local function underCoverOfDarkness(climateManager)
-    if isNightTime() or isFoggy(climateManager) then
+    if isNightTime(climateManager) or isFoggy(climateManager) then
         getSandboxOptions():set("ZombieLore.Sight", SIGHT_POOR)
     else
         getSandboxOptions():set("ZombieLore.Sight", SIGHT_NORMAL)
