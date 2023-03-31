@@ -4,12 +4,23 @@ local SIGHT_POOR = 3
 
 local function isNightTime()
     local hour = getGameTime():getTimeOfDay()
-    return hour >= 23 or hour < 5
+    local night_start_hour = SandboxVars.UnderCoverOfDarkness.NightStartHour
+    local night_end_hour = SandboxVars.UnderCoverOfDarkness.NightEndHour
+
+    if night_start_hour == night_end_hour then
+        return false
+    end
+
+    if night_start_hour > night_end_hour then
+        return hour >= night_start_hour or hour < night_end_hour
+    elseif night_start_hour < night_end_hour then
+        return hour >= night_start_hour and hour < night_end_hour
+    end
 end
 
 local function isFoggy(climateManager)
     local fogIntensity = climateManager:getFogIntensity()
-    return fogIntensity >= 0.1
+    return fogIntensity >= SandboxVars.UnderCoverOfDarkness.MinimumFogIntensity
 end
 
 local function underCoverOfDarkness(climateManager)

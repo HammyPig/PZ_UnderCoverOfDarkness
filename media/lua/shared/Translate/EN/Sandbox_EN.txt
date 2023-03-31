@@ -1,0 +1,12 @@
+Sandbox_EN = {
+    Sandbox_UnderCoverOfDarkness = "Under Cover of Darkness",
+
+    Sandbox_UnderCoverOfDarkness_NightStartHour = "Night Start Hour",
+    Sandbox_UnderCoverOfDarkness_NightStartHour_tooltip = "The hour that sets zombie vision to poor.",
+
+    Sandbox_UnderCoverOfDarkness_NightEndHour = "Night End Hour",
+    Sandbox_UnderCoverOfDarkness_NightEndHour_tooltip = "The hour that returns zombie vision to normal.",
+
+    Sandbox_UnderCoverOfDarkness_MinimumFogIntensity = "Minimum Fog Intensity",
+    Sandbox_UnderCoverOfDarkness_MinimumFogIntensity_tooltip = "The minimum fog intensity for zombie vision to be set to poor."
+}
