@@ -1,3 +1,17 @@
+local function getNightHourOffset()
+    local LOW_LIGHT = 1
+    local DARK = 2
+    local PITCH_BLACK = 3
+
+    local nightHourOffsets = {
+        [LOW_LIGHT]=0,
+        [DARK]=1,
+        [PITCH_BLACK]=2
+    }
+
+    return nightHourOffsets[SandboxVars.UnderCoverOfDarkness.MinimumDarknessLevel]
+end
+
 local function isNightTime(climateManager)
     local DUSK_OFFSET = 2
     local DAWN_OFFSET = -2
@@ -5,8 +19,8 @@ local function isNightTime(climateManager)
     local hour = getGameTime():getTimeOfDay()
     local season = climateManager:getCurrentDay():getSeason()
 
-    local nightStartHour = season:getDusk() + DUSK_OFFSET
-    local nightEndHour = season:getDawn() + DAWN_OFFSET
+    local nightStartHour = season:getDusk() + getNightHourOffset()
+    local nightEndHour = season:getDawn() - getNightHourOffset()
 
     if nightStartHour > nightEndHour then
         return hour >= nightStartHour or hour < nightEndHour

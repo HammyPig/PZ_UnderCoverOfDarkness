@@ -1,5 +1,13 @@
 VERSION = 1,
 
+option UnderCoverOfDarkness.MinimumDarknessLevel {
+    type = enum,
+    numValues = 3,
+    default = 3,
+    page = UnderCoverOfDarkness,
+    translation = UnderCoverOfDarkness_MinimumDarknessLevel,
+}
+
 option UnderCoverOfDarkness.MinimumFogIntensity {
     type = double,
     min = 0,

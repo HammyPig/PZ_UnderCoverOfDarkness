@@ -1,6 +1,12 @@
 Sandbox_EN = {
     Sandbox_UnderCoverOfDarkness = "Under Cover of Darkness",
 
+    Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel = "Minimum Darkness Level",
+    Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_tooltip = "The minimum darkness level for zombie vision to be set to poor.",
+    Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_option1 = "Low Light",
+    Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_option2 = "Dark",
+    Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_option3 = "Pitch Black",
+
     Sandbox_UnderCoverOfDarkness_MinimumFogIntensity = "Minimum Fog Intensity",
     Sandbox_UnderCoverOfDarkness_MinimumFogIntensity_tooltip = "The minimum fog intensity for zombie vision to be set to poor."
 }
