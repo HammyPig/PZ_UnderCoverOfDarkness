@@ -1,5 +1,21 @@
 VERSION = 1,
 
+option UnderCoverOfDarkness.NormalZombieSight {
+    type = enum,
+    numValues = 3,
+    default = 2,
+    page = UnderCoverOfDarkness,
+    translation = UnderCoverOfDarkness_NormalZombieSight,
+}
+
+option UnderCoverOfDarkness.ReducedZombieSight {
+    type = enum,
+    numValues = 3,
+    default = 3,
+    page = UnderCoverOfDarkness,
+    translation = UnderCoverOfDarkness_ReducedZombieSight,
+}
+
 option UnderCoverOfDarkness.MinimumDarknessLevel {
     type = enum,
     numValues = 3,

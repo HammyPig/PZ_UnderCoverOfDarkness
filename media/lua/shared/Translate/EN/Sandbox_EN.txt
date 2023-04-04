@@ -1,12 +1,24 @@
 Sandbox_EN = {
     Sandbox_UnderCoverOfDarkness = "Under Cover of Darkness",
 
+    Sandbox_UnderCoverOfDarkness_NormalZombieSight = "Normal Zombie Sight",
+    Sandbox_UnderCoverOfDarkness_NormalZombieSight_tooltip = "The zombie sight level set under normal conditions.",
+    Sandbox_UnderCoverOfDarkness_NormalZombieSight_option1 = "Eagle",
+    Sandbox_UnderCoverOfDarkness_NormalZombieSight_option2 = "Normal",
+    Sandbox_UnderCoverOfDarkness_NormalZombieSight_option3 = "Poor",
+
+    Sandbox_UnderCoverOfDarkness_ReducedZombieSight = "Reduced Zombie Sight",
+    Sandbox_UnderCoverOfDarkness_ReducedZombieSight_tooltip = "The zombie sight level set during night or fog.",
+    Sandbox_UnderCoverOfDarkness_ReducedZombieSight_option1 = "Eagle",
+    Sandbox_UnderCoverOfDarkness_ReducedZombieSight_option2 = "Normal",
+    Sandbox_UnderCoverOfDarkness_ReducedZombieSight_option3 = "Poor",
+
     Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel = "Minimum Darkness Level",
-    Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_tooltip = "The minimum darkness level for zombie vision to be set to poor.",
+    Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_tooltip = "The minimum darkness level for zombie vision to be reduced.",
     Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_option1 = "Low Light",
     Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_option2 = "Dark",
     Sandbox_UnderCoverOfDarkness_MinimumDarknessLevel_option3 = "Pitch Black",
 
     Sandbox_UnderCoverOfDarkness_MinimumFogIntensity = "Minimum Fog Intensity",
-    Sandbox_UnderCoverOfDarkness_MinimumFogIntensity_tooltip = "The minimum fog intensity for zombie vision to be set to poor."
+    Sandbox_UnderCoverOfDarkness_MinimumFogIntensity_tooltip = "The minimum fog intensity for zombie vision to be reduced."
 }
