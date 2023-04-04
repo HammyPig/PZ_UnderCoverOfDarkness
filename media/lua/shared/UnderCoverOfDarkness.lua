@@ -1,11 +1,7 @@
-local SIGHT_EAGLE = 1
-local SIGHT_NORMAL = 2
-local SIGHT_POOR = 3
-
-local DUSK_OFFSET = 2
-local DAWN_OFFSET = -2
-
 local function isNightTime(climateManager)
+    local DUSK_OFFSET = 2
+    local DAWN_OFFSET = -2
+
     local hour = getGameTime():getTimeOfDay()
     local season = climateManager:getCurrentDay():getSeason()
 
@@ -25,6 +21,10 @@ local function isFoggy(climateManager)
 end
 
 local function underCoverOfDarkness(climateManager)
+    local SIGHT_EAGLE = 1
+    local SIGHT_NORMAL = 2
+    local SIGHT_POOR = 3
+    
     if isNightTime(climateManager) or isFoggy(climateManager) then
         getSandboxOptions():set("ZombieLore.Sight", SIGHT_POOR)
     else
